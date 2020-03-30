@@ -4,19 +4,25 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.Objects;
 
+
 @Entity
+@Table(name = "fp_users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
 
+    @Column(name = "user_name")
     private String user_name;
 
+    @Column(name = "user_surname")
     private String user_surname;
 
     @Email
+    @Column(name = "user_email")
     private String user_email;
 
+    @Column(name = "user_password")
     private String user_password;
 
     @Override
