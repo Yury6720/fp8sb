@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Find User</title>
+</head>
+<body>
+<h1>FP 8 SB</h1>
+<h3>Find users by name</h3>
+<div class="container">
+    <div th:replace="fragments/header :: header"></div>
+    <div th:if="${not #lists.isEmpty(notes)}">
+        <div th:replace="operations/list :: notebook"></div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+<div>
+    <form method="post">
+        <input type="text" name="findByName" placeholder="Имя пользователя"/>
+        <button type="submit">Поиск</button>
+    </form>
+</div>
+
+<h4><output>${message}</output></h4>
+<div>
+    <b>{{id}}</b>
+    <span>{{user_name}}</span>
+    <span>{{user_surname}}</span>
+    <span>{{user_email}}</span>
+    <span>{{user_password}}</span>
+</div>
+</body>
+</html>
